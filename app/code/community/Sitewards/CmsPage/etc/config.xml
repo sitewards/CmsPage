@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ *
+ * @category    Sitewards
+ * @package     Sitewards_CmsPage
+ * @copyright   Copyright (c) 2013 Sitewards GmbH (http://www.sitewards.com/)
+ */
+-->
+<config>
+    <modules>
+        <Sitewards_CmsPage>
+            <version>1.0.0</version>
+        </Sitewards_CmsPage>
+    </modules>
+    <global>
+        <blocks>
+            <sitewards_cmspage>
+                <class>Sitewards_CmsPage_Block</class>
+            </sitewards_cmspage>
+            <enterprise_cms>
+                <rewrite>
+                    <adminhtml_cms_page_revision_edit_form>Sitewards_CmsPage_Block_Adminhtml_Cms_Page_Revision_Edit_Form</adminhtml_cms_page_revision_edit_form>
+                </rewrite>
+            </enterprise_cms>
+            <page>
+                <rewrite>
+                    <html_breadcrumbs>Sitewards_CmsPage_Block_Breadcrumbs</html_breadcrumbs>
+                </rewrite>
+            </page>
+            <cms>
+                <rewrite>
+                    <page>Sitewards_CmsPage_Block_Page</page>
+                </rewrite>
+            </cms>
+        </blocks>
+        <models>
+            <sitewards_cmspage>
+                <class>Sitewards_CmsPage_Model</class>
+            </sitewards_cmspage>
+            <enterprise_cms>
+                <rewrite>
+                    <page_revision>Sitewards_CmsPage_Model_Page_Revision</page_revision>
+                    <config>Sitewards_CmsPage_Model_Config</config>
+                </rewrite>
+            </enterprise_cms>
+        </models>
+        <resources>
+            <sitewards_cms_page_setup>
+                <setup>
+                    <module>Sitewards_CmsPage</module>
+                </setup>
+            </sitewards_cms_page_setup>
+        </resources>
+        <page>
+            <layouts>
+                <one_column_with_teaser>
+                    <template>sitewards/cmspage/page/1columns-teaser.phtml</template>
+                </one_column_with_teaser>
+            </layouts>
+        </page>
+    </global>
+    <adminhtml>
+        <events>
+            <sitewards_cmspage_revision_save_before>
+                <observers>
+                    <sitewards_cmspage>
+                        <class>sitewards_cmspage/observer</class>
+                        <method>sitewardsCmsPageRevisionSaveBefore</method>
+                    </sitewards_cmspage>
+                </observers>
+            </sitewards_cmspage_revision_save_before>
+        </events>
+    </adminhtml>
+</config>

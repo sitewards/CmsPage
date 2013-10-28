@@ -1,0 +1,11 @@
+{
+    "name": "sitewards/cms_page",
+    "license": "OSL-3.0",
+    "type": "magento-module",
+    "description": "Extends Sitewards CmsTeaser Extension to be compatible with Enterprise edition",
+    "homepage": "http://www.sitewards.com",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*",
+        "sitewards/cms_teaser": "*"
+    }
+}

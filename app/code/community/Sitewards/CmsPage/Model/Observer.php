@@ -20,6 +20,6 @@ class Sitewards_CmsPage_Model_Observer extends Sitewards_CmsTeaser_Model_Observe
     public function sitewardsCmsPageRevisionSaveBefore(Varien_Event_Observer $oObserver)
     {
         $oRevision = $oObserver->getData('revision');
-        $this->uploadImage($oRevision);
+        $this->processTeaserImage($oRevision);
     }
 }
